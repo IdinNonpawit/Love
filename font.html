@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Anniversary</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background: #fef3f3;
+            color: #ff6b6b;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background: #ff6b6b;
+            color: #fff;
+            padding: 20px;
+            font-size: 2em;
+        }
+        .gallery img {
+            width: 200px;
+            height: auto;
+            margin: 10px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        }
+        .countdown {
+            font-size: 1.5em;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <header>Happy Anniversary, My Love!</header>
+    
+    <h2>Our Journey Together</h2>
+    <p>Every moment with you is special. Here’s a glimpse of our beautiful journey:</p>
+    
+    <div class="gallery">
+        <img src="photo1.jpg" alt="Memories">
+        <img src="photo2.jpg" alt="Memories">
+        <img src="photo3.jpg" alt="Memories">
+    </div>
+    
+    <h2>Time Until Our Next Anniversary</h2>
+    <div class="countdown" id="countdown"></div>
+    
+    <script>
+        function countdown() {
+            const nextAnniversary = new Date('2025-12-01T00:00:00');
+            const now = new Date();
+            const diff = nextAnniversary - now;
+            
+            const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
+            const minutes = Math.floor((diff / (1000 * 60)) % 60);
+            const seconds = Math.floor((diff / 1000) % 60);
+            
+            document.getElementById('countdown').innerHTML = 
+                `${days} Days ${hours} Hours ${minutes} Minutes ${seconds} Seconds`;
+        }
+        setInterval(countdown, 1000);
+    </script>
+</body>
+</html>
